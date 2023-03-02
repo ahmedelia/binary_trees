@@ -1,29 +1,27 @@
 #include "binary_trees.h"
 
 /**
- * binary_tree_uncle - finds the uncle of a node
- * @node: node element to find its uncle
- * Return: uncle node to the one provided
+ * binary_trees_ancestor - finds the Lowest common ansector of two nodes
+ * @first: first node element
+ * @second: second node element
+ * Return: the lowest common ansector node
  */
 
-binary_tree_t *binary_trees_ancestor(const binary_tree_t *first, const binary_tree_t *second)
+binary_tree_t *binary_trees_ancestor(const binary_tree_t *first,
+				     const binary_tree_t *second)
 {
 	if (first == NULL || second == NULL)
-		return NULL;
+		return (NULL);
 
-	if (second->parent == first->parent)
-		return (binary_tree_t *)second->parent;
-	if (get_parent(first) == second)
-		return (binary_tree_t *)second;
-	if (get_parent(second) == first)
-		return (binary_tree_t *)first;
+	if (first == second)
+		return ((binary_tree_t *)first);
 
-	return (binary_tree_t *)binary_trees_ancestor(first->parent, second->parent);
-}
+	if (first->parent == second || !second->parent ||
+	    (!second->parent->parent && first->parent))
+		return (binary_trees_ancestor(first->parent, second));
+	else if (second->parent == first || !first->parent ||
+		 (!first->parent->parent && second->parent))
+		return (binary_trees_ancestor(first, second->parent));
 
-binary_tree_t *get_parent(const binary_tree_t *node)
-{
-	if (node == NULL)
-		return NULL;
-	return node->parent;
+	return (binary_trees_ancestor(first->parent, second->parent));
 }
