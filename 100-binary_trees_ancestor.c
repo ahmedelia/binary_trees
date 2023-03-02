@@ -1,7 +1,5 @@
 #include "binary_trees.h"
 
-binary_tree_t *get_parent(const binary_tree_t *node);
-
 /**
  * binary_tree_uncle - finds the uncle of a node
  * @node: node element to find its uncle
