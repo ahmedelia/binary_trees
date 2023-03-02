@@ -1,5 +1,6 @@
 #include "binary_trees.h"
 
+<<<<<<< HEAD
 
 /**
  * delete_node - helper
@@ -24,4 +25,19 @@ void delete_node(binary_tree_t *node)
 void binary_tree_delete(binary_tree_t *tree)
 {
 	delete_node(tree);
+=======
+/**
+ * binary_tree_delete - deletes an entire binary tree
+ * @tree: pointer to tree root
+ * Return: void
+ */
+
+void binary_tree_delete(binary_tree_t *tree)
+{
+	if (tree == NULL)
+		return;
+	binary_tree_delete(tree->left);
+	binary_tree_delete(tree->right);
+	free(tree);
+>>>>>>> ammar
 }
