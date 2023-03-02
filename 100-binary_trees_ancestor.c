@@ -10,9 +10,6 @@ binary_tree_t *get_parent(const binary_tree_t *node);
 
 binary_tree_t *binary_trees_ancestor(const binary_tree_t *first, const binary_tree_t *second)
 {
-	binary_tree_t *ftemp;
-	binary_tree_t *stemp;
-
 	if (first == NULL || second == NULL)
 		return NULL;
 
