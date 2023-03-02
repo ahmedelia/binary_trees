@@ -3,7 +3,7 @@
 /**
  * binary_tree_insert_right - create node
  * @parent: pointer to parent
- * @val: node data
+ * @value: node data
  * Return: void
 */
 binary_tree_t *binary_tree_insert_right(binary_tree_t *parent, int value)
