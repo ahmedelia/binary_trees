@@ -3,6 +3,7 @@
 /**
  * binary_tree_height - get the hieght of longest branch in binary tree
  * @tree: pointer to the root of the tree
+ * Return: height of the binary tree
  */
 
 size_t binary_tree_height(const binary_tree_t *tree)
